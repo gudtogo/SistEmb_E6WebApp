@@ -2,9 +2,7 @@
 
 Librerias necesarias para poder correr el codigo:
 
-- pip install django
-- pip install pyrebase
-- pip install pyrebase4
+- pip install -r requirements.txt
 
 Codigos para correr el servidor:
 

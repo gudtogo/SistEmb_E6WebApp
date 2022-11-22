@@ -1,11 +1,12 @@
 from django.shortcuts import render
+from decouple import config
 import pyrebase
 
 config = {
-    "apiKey": "AIzaSyB36np7JlDbL0seQO3JUqyzoh2i5SEkx3E",
+    "apiKey": config("API_KEY"),
     "authDomain": "biclicletasistemb.firebaseapp.com",
-    "databaseURL": "https://biclicletasistemb-default-rtdb.firebaseio.com",
-    "projectId": "biclicletasistemb",
+    "databaseURL": config("FIREBASE_URL"),
+    "projectId": config("PROJECT_ID"),
     "storageBucket": "biclicletasistemb.appspot.com",
     "messagingSenderId": "296685519501",
     "appId": "1:296685519501:web:a0f5ddc125e100c044d8c4"
