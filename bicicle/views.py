@@ -42,7 +42,7 @@ def home(request):
     }
 
     if(request.GET.get('updateButton')):
-        database.child('production').update({'able':request.GET.get('AbleTextBox')})
+        database.child('production').update({'able':bool(request.GET.get('AbleTextBox'))})
         database.child('production').update({'mode':int(request.GET.get('ModoTextBox'))})
         
     return render(request, 'bicicle/home.html', context)
