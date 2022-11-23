@@ -25,11 +25,24 @@ stats = [
 ]
 
 def home(request):
-    bicicle_stat_float = database.child('test').child('float').get().val()
-    bicicle_stat_int = database.child('test').child('int').get().val()
-    
+    bicicle_stat_able = database.child('production').child('able').get().val()
+    bicicle_stat_distance = database.child('production').child('distance').get().val()
+    bicicle_stat_distanceParcial = database.child('production').child('distanceParcial').get().val()
+    bicicle_stat_mode = database.child('production').child('mode').get().val()
+    bicicle_stat_speed = database.child('production').child('speed').get().val()
+    bicicle_stat_vMax = database.child('production').child('vMax').get().val()
+
     context = {
-        'bicicle_stat_float': bicicle_stat_float,
-        'bicicle_stat_int': bicicle_stat_int
+        'bicicle_stat_able': bicicle_stat_able,
+        'bicicle_stat_distance': bicicle_stat_distance,
+        'bicicle_stat_distanceParcial': bicicle_stat_distanceParcial,
+        'bicicle_stat_mode': bicicle_stat_mode,
+        'bicicle_stat_speed': bicicle_stat_speed,
+        'bicicle_stat_vMax': bicicle_stat_vMax
     }
+
+    if(request.GET.get('updateButton')):
+        database.child('production').update({'able':request.GET.get('AbleTextBox')})
+        database.child('production').update({'mode':int(request.GET.get('ModoTextBox'))})
+        
     return render(request, 'bicicle/home.html', context)

@@ -5,7 +5,19 @@
 </head>
 <body>
     <h1>Bicicle Stats</h1>
-        <p>Float {{ bicicle_stat_float }}</p>
-        <p>Int {{ bicicle_stat_int }}</p>
+        <p>distancia: {{ bicicle_stat_distance }}</p>
+        <p>distancia Parcial: {{ bicicle_stat_distanceParcial }}</p>
+        <p>Able: {{ bicicle_stat_able }}</p>
+        <p>Modo: {{ bicicle_stat_mode }}</p>
+        <p>Velocidad: {{ bicicle_stat_speed }}</p>
+        <p>Velocidad Maxima: {{ bicicle_stat_vMax }}</p>
+    <h2>Update Stats</h2>
+        <form action="#" method="get">
+            <label for="Able">Able:</label>
+            <input type="text" id="AbleTextBox" name="AbleTextBox" placeholder="true/false"/>
+            <label for="Modo">Modo:</label>
+            <input type="text" id="ModoTextBox" name="ModoTextBox" placeholder="1/2/3"/>
+            <input type="submit" class="btn" value="Update" name="updateButton"/>
+        </form>
 </body>
 </html>
